@@ -15,10 +15,13 @@ To help know this work quickly, there are some summarized contents as follows.
 ## 1. Data Synthesizing System
 
 ![synthesizing_system](https://github.com/FG-PersonX/FG-PersonX/blob/main/images/synthesizing_system.PNG)
-By using the Unity engine, we create a controllable system to generate images with 3D models. The assets include 3D models of person and scene. We also provide interfaces with editable parameters that can be used to modify commonly studied visual factors in person re-ID, such as viewpoint, illumination, and background. 
-**Identities.** There are 1,000 hand-crafted identities of 5 professions. All of them are designed to wear uniforms, and only subtle differences can be used to distinguish them. To ensure diversity, we hand-craft the person models with different genders, skin colors, ages, hairstyles. The picture above shows sample images of different identities.
-**Scenes.** Five scenes are provided corresponding to different professions, which includes school, hospital, factory/construction site, playground and city block. Meanwhile, we provide an interface that allows users to add other scenes into the system based on their demands. 
-**Visual Factors.** The selections of illumination contain directional light (sunlight), point light, spotlight, and area light. Backgrounds will change with the field of view (FoV) of the camera and position of the person in the 3D scene, and more variance in the 3D scene means images can be generated with more diverse backgrounds.
+By using the Unity engine, we create a controllable system to generate images with 3D models. The assets include 3D models of person and scene. We also provide interfaces with editable parameters that can be used to modify commonly studied visual factors in person re-ID, such as viewpoint, illumination, and background.<br>
+
+**Identities.** There are 1,000 hand-crafted identities of 5 professions. All of them are designed to wear uniforms, and only subtle differences can be used to distinguish them. To ensure diversity, we hand-craft the person models with different genders, skin colors, ages, hairstyles. The picture above shows sample images of different identities.<br>
+
+**Scenes.** Five scenes are provided corresponding to different professions, which includes school, hospital, factory/construction site, playground and city block. Meanwhile, we provide an interface that allows users to add other scenes into the system based on their demands. <br>
+
+**Visual Factors.** The selections of illumination contain directional light (sunlight), point light, spotlight, and area light. Backgrounds will change with the field of view (FoV) of the camera and position of the person in the 3D scene, and more variance in the 3D scene means images can be generated with more diverse backgrounds.<br>
 
 ## 2.  Dataset introduction 
 
