@@ -1,30 +1,24 @@
 # The FG-PersonX Dataset
 
-![image](https://github.com/FG-PersonX/FG-PersonX/blob/main/images/overview.PNG)
+![overview](https://github.com/FG-PersonX/FG-PersonX/blob/main/images/overview.PNG)
 
-  **FG-PersonX Dataset** contains 1,000 identities of five groups: students, medical personnel,construction workers, sportsmen, and security personnel. Over 40K images are generated under different indoor and outdoor scenes. We also provide a data synthesizing engine that can generate customized data in different environments by changing visual factors such as illumination, backgrounds, and viewpoints.
-
-The link of the illustration of the data engine is [PersonX](https://github.com/sxzrt/Instructions-of-the-PersonX-dataset); the link of the paper is [pdf-link](https://arxiv.org/pdf/1812.02162.pdf).
+In this work, we develop a new large-scale synthetic dataset, named **FG-PersonX**, to support the study of fine-grained person re-identification (FG person re-ID) where people wear similar clothes such as uniforms.  **FG-PersonX Dataset** contains 1,000 identities of five groups: students, medical personnel,construction workers, sportsmen, and security personnel. Over 40K images are generated under different indoor and outdoor scenes. We also provide a data synthesizing engine that can generate customized data in different environments by changing visual factors such as illumination, backgrounds, and viewpoints. Besides, We have performed extensive evaluations using FG-PersonX for benchmarking purposes.
 
 To help know this work quickly, there are some summarized contents as follows.
 
 ## List of contents
 
-* [1. Dataset introduction](#1-dataset-introduction)
-* [2. Dataset validation](#2-dataset-validation)
-* [3. Dissecting Person Re-identification from the Viewpoint of Viewpoint](#3-dissecting-person-re-identification-from-the-viewpoint-of-viewpoint)
-  * [3.1. How do viewpoint distributions in the training set affect model learning?](#31-how-do-viewpoint-distributions-in-the-training-set-affect-model-learning)
-  * [3.2. How do true match viewpoints in the gallery affect retrieval?](#32-how-do-true-match-viewpoints-in-the-gallery-affect-retrieval)
-  * [3.3. How does the query viewpoint influence the retrieval?](#33-how-does-the-query-viewpoint-influence-the-retrieval)
-* [4. Citation](#4-citation)
+* [1. Data Synthesizing System](#1-Data Synthesizing System)
+* [2. Dataset introduction](#2-dataset-introduction)
+* [3. Experiment](#3-Experiment)
 
-## 1. Dataset introduction 
+## 1. Data Synthesizing System
 
-The PersonX dataset contains six backgrounds, including three pure color backgrounds and three scene backgrounds. There are 1266 hand-crafted identities (547 females and 719 males) and each identity has 36 images (corresponding to 36 viewpoints that are defined below). In this work, we combine two different backgrounds as one dataset to study different situations. The backgrounds and subsets of PersonX are shows as follows.
+By using the Unity engine, we create a controllable system to generate images with 3D models. The assets include 3D models of person and scene. We also provide interfaces with editable parameters that can be used to modify commonly studied visual factors in person re-ID, such as viewpoint, illumination, and background.
 
-![Fig 2](https://github.com/sxzrt/The-PersonX-dataset/blob/master/images/fig2.jpg)
+![synthesizing_system](https://github.com/FG-PersonX/FG-PersonX/blob/main/images/synthesizing_system.PNG)
 
-## 2. Dataset validation 
+## 2.  Dataset introduction 
 
 To show the feasible of using synthetic data, we conduct experiments on both real-world (the Market-1501/1203 and Duke datasets) and synthetic datasets by using evaluate three algorithms IDE+, triplet feature and PCB. The results are shown in the following figure.
 
@@ -41,7 +35,7 @@ Three characteristics of PersonX can be observed from the validation results:
 
 ****
 
-## 3. Dissecting Person Re-identification from the Viewpoint of Viewpoint 
+## 3. Experiment
 
 Based on the PersonX engine, this paper makes an early attempt in studying a particular factor, **viewpoint**.
 
