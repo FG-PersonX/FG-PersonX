@@ -8,7 +8,7 @@ To help know this work quickly, there are some summarized contents as follows.
 
 ## List of contents
 
-* [1. Data Synthesizing System](#1-Data Synthesizing System)
+* [1. Data Synthesizing System](#1-Data-Synthesizing System)
 * [2. Dataset introduction](#2-Dataset-introduction)
 * [3. Experiment](#3-Experiment)
 
@@ -30,7 +30,8 @@ Based on the above system, the FG-PersonX image dataset is generated as a benchm
 
 ![experiments](https://github.com/FG-PersonX/FG-PersonX/blob/main/images/experiments.PNG)
 We  evaluate  commonly  used  techniques  of  person  re-ID using the FG-PersonX dataset and report the results forbenchmarking purposes.<br>
-**Models.** We select several commonly used person re-id models from three high-started Github repositories, [Person-reID-baseline](https://github.com/layumi/Person_reID_baseline_pytorch), [reid-strong-baseline](https://github.com/michuanhaohao/reid-strong-baseline) and [deep-person-reid](https://github.com/KaiyangZhou/deep-person-reid).
+**Models.** We select several commonly used person re-id models from three high-started Github repositories, [Person-reID-baseline](https://github.com/layumi/Person_reID_baseline_pytorch), [reid-strong-baseline](https://github.com/michuanhaohao/reid-strong-baseline) and [deep-person-reid](https://github.com/KaiyangZhou/deep-person-reid).<br>
+**Evaluation Metric.** Cumulative matching characteristics (CMC) and mean average precision (mAP) are used for evaluation.<br>
 
 
 
