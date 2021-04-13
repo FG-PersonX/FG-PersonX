@@ -1,47 +1,32 @@
 # The FG-PersonX Dataset
 
-![image](https://github.com/FG-PersonX/FG-PersonX/blob/main/images/overview.PNG)
+![overview](https://github.com/FG-PersonX/FG-PersonX/blob/main/images/overview.PNG)
 
-  **FG-PersonX Dataset** contains 1,000 identities of five groups: students, medical personnel,construction workers, sportsmen, and security personnel. Over 40K images are generated under different indoor and outdoor scenes. We also provide a data synthesizing engine that can generate customized data in different environments by changing visual factors such as illumination, backgrounds, and viewpoints.
-
-The link of the illustration of the data engine is [PersonX](https://github.com/sxzrt/Instructions-of-the-PersonX-dataset); the link of the paper is [pdf-link](https://arxiv.org/pdf/1812.02162.pdf).
+In this work, we develop a new large-scale synthetic dataset, named **FG-PersonX**, to support the study of fine-grained person re-identification (FG person re-ID) where people wear similar clothes such as uniforms.  FG-PersonX dataset contains 1,000 identities of five groups: students, medical personnel,construction workers, sportsmen, and security personnel. Over 40K images are generated under different indoor and outdoor scenes. We also provide a data synthesizing engine that can generate customized data in different environments by changing visual factors such as illumination, backgrounds, and viewpoints. Besides, We have performed extensive evaluations using FG-PersonX for benchmarking purposes.
 
 To help know this work quickly, there are some summarized contents as follows.
 
 ## List of contents
 
-* [1. Dataset introduction](#1-dataset-introduction)
-* [2. Dataset validation](#2-dataset-validation)
-* [3. Dissecting Person Re-identification from the Viewpoint of Viewpoint](#3-dissecting-person-re-identification-from-the-viewpoint-of-viewpoint)
-  * [3.1. How do viewpoint distributions in the training set affect model learning?](#31-how-do-viewpoint-distributions-in-the-training-set-affect-model-learning)
-  * [3.2. How do true match viewpoints in the gallery affect retrieval?](#32-how-do-true-match-viewpoints-in-the-gallery-affect-retrieval)
-  * [3.3. How does the query viewpoint influence the retrieval?](#33-how-does-the-query-viewpoint-influence-the-retrieval)
-* [4. Citation](#4-citation)
+* [1. Data Synthesizing System](#1-Data Synthesizing System)
+* [2. Dataset introduction](#2-dataset-introduction)
+* [3. Experiment](#3-Experiment)
 
-## 1. Dataset introduction 
+## 1. Data Synthesizing System
 
-The PersonX dataset contains six backgrounds, including three pure color backgrounds and three scene backgrounds. There are 1266 hand-crafted identities (547 females and 719 males) and each identity has 36 images (corresponding to 36 viewpoints that are defined below). In this work, we combine two different backgrounds as one dataset to study different situations. The backgrounds and subsets of PersonX are shows as follows.
+![synthesizing_system](https://github.com/FG-PersonX/FG-PersonX/blob/main/images/synthesizing_system.PNG)
+By using the Unity engine, we create a controllable system to generate images with 3D models. The assets include 3D models of person and scene. We also provide interfaces with editable parameters that can be used to modify commonly studied visual factors in person re-ID, such as viewpoint, illumination, and background.<br>
+**Identities.** There are 1,000 hand-crafted identities of 5 professions. All of them are designed to wear uniforms, and only subtle differences can be used to distinguish them. To ensure diversity, we hand-craft the person models with different genders, skin colors, ages, hairstyles. The picture above shows sample images of different identities.<br>
+**Scenes.** Five scenes are provided corresponding to different professions, which includes school, hospital, factory/construction site, playground and city block. Meanwhile, we provide an interface that allows users to add other scenes into the system based on their demands. <br>
+**Visual Factors.** The selections of illumination contain directional light (sunlight), point light, spotlight, and area light. Backgrounds will change with the field of view (FoV) of the camera and position of the person in the 3D scene, and more variance in the 3D scene means images can be generated with more diverse backgrounds.<br>
 
-![Fig 2](https://github.com/sxzrt/The-PersonX-dataset/blob/master/images/fig2.jpg)
+## 2.  Dataset introduction 
 
-## 2. Dataset validation 
+Based on the above system, the FG-PersonX image dataset is generated as a benchmark, and the settings of the datasets are introduced below.<br>
+**Cameras.** We arrange 2 cameras at different positions in each scene for a total of 10 cameras. Users can modify the number of cameras arbitrarily for their own tasks. The resolution of cameras is set to 1024x768.
+**Viewpoints.** For each identity, we change its rotation angle (relative to the camera) in 10° to capture 35 images under each camera, and then randomly sample 5 or 6 images to formulate our dataset. Finally, there are 49,291 images are generated in the current FG-PersonX dataset.
 
-To show the feasible of using synthetic data, we conduct experiments on both real-world (the Market-1501/1203 and Duke datasets) and synthetic datasets by using evaluate three algorithms IDE+, triplet feature and PCB. The results are shown in the following figure.
-
-<div align=center><img src="https://github.com/sxzrt/The-PersonX-dataset/blob/master/images/benchmark.jpg" width="800" /></div>
-
-    `“lr” means the frames are low resolution of 512×242 instead of the original resolution 1024×768`
-
-Three characteristics of PersonX can be observed from the validation results:
-
-* **Eligibility:** the performance trend of the three algorithms is similar between PersonX and real-world datasets
-* **Purity:** the re-ID accuracies on PersonX subsets are relatively high compared to the real-world dataset
-* **Sensitivity:** these subsets are sensitive to the changes in the environment, such as changes of resolution.
-
-
-****
-
-## 3. Dissecting Person Re-identification from the Viewpoint of Viewpoint 
+## 3. Experiment
 
 Based on the PersonX engine, this paper makes an early attempt in studying a particular factor, **viewpoint**.
 
