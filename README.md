@@ -9,7 +9,7 @@ To help know this work quickly, there are some summarized contents as follows.
 ## List of contents
 
 * [1. Data Synthesizing System](#1-data-synthesizing-system)
-* [2. Dataset introduction](#2-dataset-introduction)
+* [2. Dataset Introduction](#2-dataset-introduction)
 * [3. Experiment](#3-experiment)
 
 ## 1. Data Synthesizing System
@@ -20,7 +20,7 @@ By using the Unity engine, we create a controllable system to generate images wi
 **Scenes.** Five scenes are provided corresponding to different professions, which includes school, hospital, factory/construction site, playground and city block. Meanwhile, we provide an interface that allows users to add other scenes into the system based on their demands. <br>
 **Visual Factors.** The selections of illumination contain directional light (sunlight), point light, spotlight, and area light. Backgrounds will change with the field of view (FoV) of the camera and position of the person in the 3D scene, and more variance in the 3D scene means images can be generated with more diverse backgrounds.<br>
 
-## 2.  Dataset introduction 
+## 2.  Dataset Introduction 
 
 Based on the above system, the FG-PersonX image dataset is generated as a benchmark, and the settings of the datasets are introduced below.<br>
 **Cameras.** We arrange 2 cameras at different positions in each scene for a total of 10 cameras. Users can modify the number of cameras arbitrarily for their own tasks. The resolution of cameras is set to 1024x768.<br>
