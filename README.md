@@ -9,8 +9,8 @@ To help know this work quickly, there are some summarized contents as follows.
 ## List of contents
 
 * [1. Data Synthesizing System](#1-data-synthesizing-system)
-* [2. Dataset introduction](#2)
-* [3. Experiment](#3)
+* [2. Dataset introduction](#2-dataset-introduction)
+* [3. Experiment](#3-experiment)
 
 ## 1. Data Synthesizing System
 
