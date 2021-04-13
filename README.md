@@ -16,29 +16,15 @@ To help know this work quickly, there are some summarized contents as follows.
 
 ![synthesizing_system](https://github.com/FG-PersonX/FG-PersonX/blob/main/images/synthesizing_system.PNG)
 By using the Unity engine, we create a controllable system to generate images with 3D models. The assets include 3D models of person and scene. We also provide interfaces with editable parameters that can be used to modify commonly studied visual factors in person re-ID, such as viewpoint, illumination, and background.<br>
-
 **Identities.** There are 1,000 hand-crafted identities of 5 professions. All of them are designed to wear uniforms, and only subtle differences can be used to distinguish them. To ensure diversity, we hand-craft the person models with different genders, skin colors, ages, hairstyles. The picture above shows sample images of different identities.<br>
-
 **Scenes.** Five scenes are provided corresponding to different professions, which includes school, hospital, factory/construction site, playground and city block. Meanwhile, we provide an interface that allows users to add other scenes into the system based on their demands. <br>
-
 **Visual Factors.** The selections of illumination contain directional light (sunlight), point light, spotlight, and area light. Backgrounds will change with the field of view (FoV) of the camera and position of the person in the 3D scene, and more variance in the 3D scene means images can be generated with more diverse backgrounds.<br>
 
 ## 2.  Dataset introduction 
 
-To show the feasible of using synthetic data, we conduct experiments on both real-world (the Market-1501/1203 and Duke datasets) and synthetic datasets by using evaluate three algorithms IDE+, triplet feature and PCB. The results are shown in the following figure.
-
-<div align=center><img src="https://github.com/sxzrt/The-PersonX-dataset/blob/master/images/benchmark.jpg" width="800" /></div>
-
-    `“lr” means the frames are low resolution of 512×242 instead of the original resolution 1024×768`
-
-Three characteristics of PersonX can be observed from the validation results:
-
-* **Eligibility:** the performance trend of the three algorithms is similar between PersonX and real-world datasets
-* **Purity:** the re-ID accuracies on PersonX subsets are relatively high compared to the real-world dataset
-* **Sensitivity:** these subsets are sensitive to the changes in the environment, such as changes of resolution.
-
-
-****
+Based on the above system, the FG-PersonX image dataset is generated as a benchmark, and the settings of the datasets are introduced below.<br>
+**Cameras.** We arrange 2 cameras at different positions in each scene for a total of 10 cameras. Users can modify the number of cameras arbitrarily for their own tasks. The resolution of cameras is set to 1024x768.
+**Viewpoints.** For each identity, we change its rotation angle (relative to the camera) in 10° to capture 35 images under each camera, and then randomly sample 5 or 6 images to formulate our dataset. Finally, there are 49,291 images are generated in the current FG-PersonX dataset.
 
 ## 3. Experiment
 
