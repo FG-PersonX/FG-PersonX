@@ -1,8 +1,8 @@
 # The FG-PersonX Dataset
 
-![Fig 1](https://https://github.com/FG-PersonX/FG-PersonX/blob/main/images/overview.PNG)
+![image](https://github.com/FG-PersonX/FG-PersonX/blob/main/images/overview.PNG)
 
-Visual factors such as viewpoint, pose, illumination and background, are usually considered as important challenges in person re-identification (re-ID). Despite the acknowledgement that these factors are influential, quantitative studies on how they affect a re-ID system are still lacking. To derive insights in this scientific campaign, the burning problem needed to be settled is collecting quantitative data. However, it is difficult to control the changes of visual factors in practice and the cost of collecting this kind of data is expensive. Therefore, we build a synthetic data engine **PerxonX**.
+  **FG-PersonX Dataset** contains 1,000 identities of five groups: students, medical personnel,construction workers, sportsmen, and security personnel. Over 40K images are generated under different indoor and outdoor scenes. We also provide a data synthesizing engine that can generate customized data in different environments by changing visual factors such as illumination, backgrounds, and viewpoints.
 
 The link of the illustration of the data engine is [PersonX](https://github.com/sxzrt/Instructions-of-the-PersonX-dataset); the link of the paper is [pdf-link](https://arxiv.org/pdf/1812.02162.pdf).
 
